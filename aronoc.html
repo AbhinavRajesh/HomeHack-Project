@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>COVID-19 Helpdesk</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <link rel="Stylesheet" href="aronoc.css">
     </head>
+    <div >
+        <label id="db" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" onchange="dm()" >
+            <input type="checkbox" id="switch-2" class="mdl-switch__input">
+            <span class="mdl-switch__label">Dark Mode</span>
+        </label>
+    </div>
     <body>
-        <div class="header"><h1>CORONA &nbsp; HELPDESK</h1></div>
+        <div class="header"><h1>COVID-19    HELPDESK</h1></div>
         <form action=""method"">
         <div class="portal">
-            Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <input type="text"><br><br>
-            Place &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp; <input type="text"><br><br>
-            Symptoms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<br>
+            <h4>Name  :</h4> <input class="txt" type="text" placeholder="First Name"><br /><br />
+            <input class="txt" type="text" placeholder="Last Name"> <br /><br/>
+            <h4> Address :</h4> 
+            <textarea class="txt" rows="4" cols="20" placeholder="House No., City, District, State"></textarea> <br/><br/>
+            <h4>Symptoms :</h4>
         </div>
         <label class="tickbox">Fever
             <input type="checkbox">
@@ -39,12 +53,30 @@
             <input type="checkbox">
             <span class="tickmark"></span>
         </label>
-        <div class="portal">Enquiries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :<br></div>
+        <div class="portal">
+            <h4>Enquiries :</h4>
+            <br/>
+        </div>
         <label class="tickbox">Travelled Corona affected areas
             <input type="checkbox">
             <span class="tickmark"></span>
         </label>
-        <div class="but"><button><b>SUBMIT</b></button></div>
+        <br/><br/>
+        <div class="but">
+            <button id="sub" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                SUBMIT
+            </button>
+        </div>
         </form>
     </body>
+    <script>
+        function dm()  {
+            var x = document.getElementById("db").checked;
+            if(x == true){
+                document.querySelector('body').classList.add('darkmode');
+            }
+            else
+                document.querySelector('body').classList.remove('darkmode');
+        }
+    </script>
 </html>
